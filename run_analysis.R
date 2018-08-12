@@ -73,5 +73,5 @@ newData <- aggregate(fullData[,3:68],
 #  Activity
 #  Means of each selected variable
 #  
-write.table(newData,sep=",", file="NewData.txt")
+write.table(newData,sep=",", row.name=FALSE, file="NewData.txt")
 #
