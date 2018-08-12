@@ -94,17 +94,25 @@ Data was read from the following files:
 The data files were read to the following dataframes in R, whose dimensions are shown after their description:
 
 - Test data:
+
 measTst 	- Test measurements set, 2947 x 561 data frame
+
 labTst 	- Test activity labels, 2947 x 1 data frame
+
 subTst	- Test subject identification, 2947 x 1 data frame 
 
 - Training data:
+
 measTrn 	- Training measurements set, 7352  x 561 data frame
+
 labTrn 	- Training activity labels, 7352  x 1 data frame
+
 subTrn 	- Training subject identification, 7352  x 1 data frame 
 
 - Domain data:
+
 actNames      - Activity names, 6 x 2 data frame
+
 measNames  - measurements names, 561 x 2 data frame
 
 2) Merging of the training and the test sets
@@ -113,8 +121,11 @@ Data from training and test sets were merged to create a unique dataset.
 For this purpose, data from the measTst, labTst, and subTst data frames were binded to the measTrn, labTrn and subTrn, respectively. 
 
 The obtained data frames were named measAll, labAll and subAll, with the following dimensions:
+
 measAll 	- Complete measurements set, 10299  x 561 data frame
+
 labAll  	- Complete labels, 10299  x 1 data frame
+
 subAll 	- Complete subject identification, 10299  x 1 data frame
 
 3) Naming activities and variables
