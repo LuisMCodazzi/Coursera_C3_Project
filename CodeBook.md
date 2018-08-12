@@ -68,7 +68,7 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 ## Description of the operations performed
 
 
-## 1) Reading of the data
+1) Reading of the data
 
 Data was read from the following files:
 
@@ -107,7 +107,7 @@ subTrn 	- Training subject identification, 7352  x 1 data frame
 actNames      - Activity names, 6 x 2 data frame
 measNames  - measurements names, 561 x 2 data frame
 
-## 2) Merging of the training and the test sets
+2) Merging of the training and the test sets
 
 Data from training and test sets were merged to create a unique dataset.
 For this purpose, data from the measTst, labTst, and subTst data frames were binded to the measTrn, labTrn and subTrn, respectively. 
@@ -117,20 +117,20 @@ measAll 	- Complete measurements set, 10299  x 561 data frame
 labAll  	- Complete labels, 10299  x 1 data frame
 subAll 	- Complete subject identification, 10299  x 1 data frame
 
-## 3) Naming activities and variables
+3) Naming activities and variables
 
 In order to provide the dataset with descritive variable names, the following tasks were performed:
 - the columns of the measAll data frame were named using the features list in the second column of the measNames data frame;
 - the only column of the subAll data frame was named  'Subject'; and
 - a new column 'Activity' was added to the labAll data frame, containing the Activity name (second column from actNames data frame) related to the activity label of each row (only column in labAll data frame).
 
-## 4) Selecting features
+4) Selecting features
 
 The goal of this step was to selected only the measurements on the mean and standard deviation for each measurement of the features vector.
 The initially selected features were those including the 'mean()' or the 'std()' strings in the feature names (column names of the measAll data frame), but it should be noted that this selection includes also the meanFreq() values, which were not considered to be within the task requirements because these are somehow different categories than the simple mean measurements that the question asks for. 
 So these meanFreq() values were retired from the selected columns. The final selection, performed creating a selCols vector using the intersection of two R grep commands, returns 66 features names, that will reference the selected columns in the measurements data set.
 
-## 5) Intermediate data frame
+5) Intermediate data frame
 
 The selected features from the measAll data frame were added to the column-only subAll data frame, containing the subject identification, followed by the  second column of the labAll data frame, containing the Activity name, to form a new complete data frame that was named fullData. 
 
@@ -144,10 +144,14 @@ So, this fullData data frame contains:
 
 The dimensions of the data frame are: 10299   rows and 68 columns.
 
-## 6) New tidy data frame
+6) New tidy data frame
 
 From the data frame obtained in the prior step, was obtained the average of each of the selected features, subgrouped by subject and activity, generating the new data frame newData. 
+
+
   
+## Description of the output data set
+
 This newData data frame contains:
 
 - the subject who performed the activity for each recorded data, in a column named 'Subject'. Its range is from 1 to 30; 
@@ -158,6 +162,6 @@ This newData data frame contains:
 
 The dimensions of the data frame are: 180 rows and 68 columns.
 
-This final data frame is written in a 'csv' format as "NewData.txt"
+This output data frame is written in a 'csv' format as "NewData.txt"
 
 
