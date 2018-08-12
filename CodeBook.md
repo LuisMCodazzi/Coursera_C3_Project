@@ -222,3 +222,6 @@ This newData data frame contains:
 
 The dimensions of the data frame are: 180 rows and 68 columns.
 
+This final data frame is written in a 'csv' format as "NewData.txt"
+
+
